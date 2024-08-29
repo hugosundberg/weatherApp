@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    display: flex;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #6ec6ff, #4ba3ff);
+    justify-content: center;
+    height: 100vh;
+}
+
+.main {
+    width: 80%;
+    height: fit-content;
+    display: grid;
+    max-width: 1000px;
+}
+
+.container {
+    width: 100‰;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 340px;
+    padding: 10px;
+    border-radius: 50px 50px 50px 50px;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+}
+
+.search-bar button {
+    color: white;
+    padding-inline: 20px;
+    background-color: rgb(0, 106, 130);
+    border: none;
+    border-radius: 50px 50px 50px 50px;
+    cursor: pointer;
+}
+
+.search-bar button i {
+    color: #4ba3ff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.date-column {
+    width: 300px;
+}
+
+table td {
+    padding: 15px;
+    border-bottom: 1px solid #000000;
+    text-align: left;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table td:first-child {
+    font-weight: bold;
+    color: #333;
+}
