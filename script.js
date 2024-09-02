@@ -21,13 +21,17 @@ async function getWeatherData() {
 
 function displayWeatherInfo(data) {
     const {name: city, 
-            main: {temp, humidity},
-            weather: [{description, id}]} = data;
+            main: {temp, feels_like, humidity},
+            weather: [{description, id}],
+            
 
-    console.log(data);
+        } = data;
 
-    console.log("Temperatur: " + temp);
-    console.log("Luftfuktighet: " + humidity);
+    document.getElementById("todayTemp").textContent = (temp - 273.15).toFixed(1) + "°C";
+    document.getElementById("todayFeelsLike").textContent = (feels_like - 273.15).toFixed(1) + "°C";
+    document.getElementById("todayHumidity").textContent = humidity + "%";
+    document.getElementById("todayDescription").textContent = description;
+
 }
 
 function getWeatherEmoji(weatherId) {

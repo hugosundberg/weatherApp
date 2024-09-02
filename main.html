@@ -13,7 +13,33 @@
             <input type="text" id="location" placeholder="Search...">
             <button onclick="search()"><i class="fa fa-search"></i>Search</button>
         </div>
-        <div class="container">
+
+        <div class="weatherToday">
+            <table>
+                <th class="date-column"></th>
+                <th>Temperature</th>
+                <th>Feels like</th>
+                <th>Humidity</th>
+                <th>Description</th>
+                <tr>
+                    <td class="date-column">TODAY</td>
+                    <td id="todayTemp"></td>
+                    <td id="todayFeelsLike"></td>
+                    <td id="todayHumidity"></td>
+                    <td id="todayDescription"></td>
+                </tr>
+            </table>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="tableContainer" style="display: none;">
             <table>
                     <tr>
                         <td class="date-column">Today</td>

@@ -16,13 +16,23 @@ body {
     max-width: 1000px;
 }
 
-.container {
+.tableContainer {
     width: 100‰;
     text-align: center;
     background: white;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.weatherToday {
+    width: 100‰;
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -70,14 +80,19 @@ table {
     margin-top: 20px;
 }
 
+th {
+    width: fit-content;
+    text-align: center;
+}
+
 .date-column {
-    width: 300px;
+    width: 140px;
 }
 
 table td {
     padding: 15px;
     border-bottom: 1px solid #000000;
-    text-align: left;
+    text-align: center;
 }
 
 table tr:last-child td {
