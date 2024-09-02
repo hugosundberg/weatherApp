@@ -1,6 +1,10 @@
 const apiKey = "a7cd134423540c6192a1c60adb560896";
 const cityInput = document.getElementById('location');
 
+async function search() {
+    const weatherData = await getWeatherData();
+    displayWeatherInfo(weatherData);
+}
 
 async function getWeatherData() {
 
@@ -8,18 +12,22 @@ async function getWeatherData() {
 
     const response = await fetch(apiUrl);
 
-    console.log(response);
+    if(!response.ok) {
+        throw new Error("Could not fetch weather data");
+    }
 
     return await response.json();
-
 }
 
-function displayWeatherInfor(data) {
+function displayWeatherInfo(data) {
     const {name: city, 
-            main: {tenp, humidity},
+            main: {temp, humidity},
             weather: [{description, id}]} = data;
 
-    console.log(data)
+    console.log(data);
+
+    console.log("Temperatur: " + temp);
+    console.log("Luftfuktighet: " + humidity);
 }
 
 function getWeatherEmoji(weatherId) {
