@@ -37,6 +37,8 @@ function displayWeatherInfo(data) {
     document.getElementById("todayHumidity").textContent = humidity + "%";
     document.getElementById("todayWindSpeed").textContent = speed + " m/s " + calculateWindDirection(deg);
     document.getElementById("todayDescription").textContent = capitalizeWord(description);
+
+    getWeatherEmoji(id);
 }
 
 function calculateWindDirection(degrees) {
@@ -63,9 +65,11 @@ function calculateWindDirection(degrees) {
 
 function getWeatherEmoji(weatherId){
 
+    console.log(weatherId);
+
     switch(true){
         case (weatherId >= 200 && weatherId < 300):
-            return "";
+            document.getElementsByClassName("svg");
         case (weatherId >= 300 && weatherId < 400):
             return "";
         case (weatherId >= 500 && weatherId < 600):
