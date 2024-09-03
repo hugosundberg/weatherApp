@@ -1,6 +1,12 @@
 const apiKey = "a7cd134423540c6192a1c60adb560896";
 const cityInput = document.getElementById('location');
 
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        search();
+    }
+});
+
 async function search() {
     const weatherData = await getWeatherData();
     displayWeatherInfo(weatherData);
@@ -52,6 +58,28 @@ function calculateWindDirection(degrees) {
         return 'NW'; // Northwest
     } else {
         return 'Invalid input'; // Invalid input if the degrees are not between 0 and 360
+    }
+}
+
+function getWeatherEmoji(weatherId){
+
+    switch(true){
+        case (weatherId >= 200 && weatherId < 300):
+            return "";
+        case (weatherId >= 300 && weatherId < 400):
+            return "";
+        case (weatherId >= 500 && weatherId < 600):
+            return "";
+        case (weatherId >= 600 && weatherId < 700):
+            return "";
+        case (weatherId >= 700 && weatherId < 800):
+            return "";
+        case (weatherId === 800):
+            return "";
+        case (weatherId >= 801 && weatherId < 810):
+            return "";
+        default:
+            return "";
     }
 }
 
