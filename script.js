@@ -8,19 +8,24 @@ document.addEventListener('keydown', function(event) {
 });
 
 async function search() {
-    const weatherData = await getWeatherData();
-    displayWeatherInfo(weatherData);
+    try {
+        const weatherData = await getWeatherData();
+        displayWeatherInfo(weatherData);
+        document.getElementById('error').style = "display: none";
+    } catch (error) {
+        displayError("City not found");
+        
+        console.log(error);
+    }
 }
 
 async function getWeatherData() {
 
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}`;
 
+   
     const response = await fetch(apiUrl);
-
-    if(!response.ok) {
-        throw new Error("Could not fetch weather data");
-    }
+    
 
     return await response.json();
 }
@@ -65,8 +70,6 @@ function calculateWindDirection(degrees) {
 
 function getWeatherEmoji(weatherId){
 
-    console.log(weatherId);
-
     const element = document.getElementById('weatherIcon');
     element.style = "display";
 
@@ -74,30 +77,38 @@ function getWeatherEmoji(weatherId){
         case (weatherId >= 200 && weatherId < 300):
             // Thunderstorm
             element.src = "/svgs/thunder.svg"
-            return;
+            break;
         case (weatherId >= 300 && weatherId < 400):
             // Drizzle
             element.src = "/svgs/rainy-4.svg"
+            break;
         case (weatherId >= 500 && weatherId < 600):
             // Rain
             element.src = "/svgs/rainy-6.svg"
-            return;
+            break;
         case (weatherId >= 600 && weatherId < 700):
             // Snow
             element.src = "/svgs/snowy-5.svg"
-            return;
+            break;
         case (weatherId >= 700 && weatherId < 800):
             // Atmosphere
             element.src = "/svgs/cloudy-day2.svg"
-            return;
+            break;
         case (weatherId === 800):
             // Clear sky
             element.src = "/svgs/day.svg"
-            return;
-        case (weatherId >= 801 && weatherId < 810):
-            // Clouds
-            element.src = "/svgs/thunder.svg"
-            return;
+            break;
+        case (weatherId === 801):
+            // Few clouds
+            element.src = "/svgs/cloudy-day-1.svg"
+            break;
+        case(weatherId === 802):
+            // Scattered clouds
+            element.src = "/svgs/cloudy-day-3.svg"
+            break;
+        case(weatherId === 803 || weatherId === 804):
+            element.src = "/svgs/cloudy.svg"
+            break;
         default:
             return;
     }
@@ -116,11 +127,13 @@ function capitalizeWord(inputString) {
     return capitalizedWords.join(' ');
 }
 
+function displayError(message){
+    document.getElementById('weatherIcon').style = "display: none";
 
-
-function displayError(mesage) {
-    const errorDisplay = document.createElement("p");
-     
+    const errorDisplay = document.getElementById("error");
+    errorDisplay.style = "display";
+    errorDisplay.textContent = message;
+    errorDisplay.style.color = "red";
 }
 
 
