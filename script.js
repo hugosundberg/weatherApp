@@ -37,7 +37,7 @@ function displayWeatherInfo(data) {
     document.getElementById("todayHumidity").textContent = humidity + "%";
     document.getElementById("todayWindSpeed").textContent = speed + " m/s " + calculateWindDirection(deg);
     document.getElementById("todayDescription").textContent = capitalizeWord(description);
-
+    
     getWeatherEmoji(id);
 }
 
@@ -67,23 +67,39 @@ function getWeatherEmoji(weatherId){
 
     console.log(weatherId);
 
+    const element = document.getElementById('weatherIcon');
+    element.style = "display";
+
     switch(true){
         case (weatherId >= 200 && weatherId < 300):
-            document.getElementsByClassName("svg");
+            // Thunderstorm
+            element.src = "/svgs/thunder.svg"
+            return;
         case (weatherId >= 300 && weatherId < 400):
-            return "";
+            // Drizzle
+            element.src = "/svgs/rainy-4.svg"
         case (weatherId >= 500 && weatherId < 600):
-            return "";
+            // Rain
+            element.src = "/svgs/rainy-6.svg"
+            return;
         case (weatherId >= 600 && weatherId < 700):
-            return "";
+            // Snow
+            element.src = "/svgs/snowy-5.svg"
+            return;
         case (weatherId >= 700 && weatherId < 800):
-            return "";
+            // Atmosphere
+            element.src = "/svgs/cloudy-day2.svg"
+            return;
         case (weatherId === 800):
-            return "";
+            // Clear sky
+            element.src = "/svgs/day.svg"
+            return;
         case (weatherId >= 801 && weatherId < 810):
-            return "";
+            // Clouds
+            element.src = "/svgs/thunder.svg"
+            return;
         default:
-            return "";
+            return;
     }
 }
 
@@ -100,9 +116,7 @@ function capitalizeWord(inputString) {
     return capitalizedWords.join(' ');
 }
 
-function getWeatherEmoji(weatherId) {
 
-}
 
 function displayError(mesage) {
     const errorDisplay = document.createElement("p");
