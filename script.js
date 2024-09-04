@@ -1,6 +1,10 @@
 const apiKey = "a7cd134423540c6192a1c60adb560896";
 const cityInput = document.getElementById('location');
 
+document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('location').focus();
+});
+
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         search();
