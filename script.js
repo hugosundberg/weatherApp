@@ -136,6 +136,3 @@ function displayError(message){
     errorDisplay.style.color = "red";
 }
 
-
-
-
