@@ -176,6 +176,7 @@ footer {
 
     .weatherToday {
         width: 90%;
+        margin-top: 0;
     }
 
     .search-wrapper {
@@ -184,6 +185,11 @@ footer {
 
     .search-bar {
         width: 100%;
+        margin-bottom: 0;
+        height: 70%;
+        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .svg {
