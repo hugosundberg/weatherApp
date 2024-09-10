@@ -77,10 +77,12 @@ function getWeatherEmoji(weatherId){
     const element = document.getElementById('weatherIcon');
     element.style = "display";
 
+    weatherId = 200;
+
     switch(true){
         case (weatherId >= 200 && weatherId < 300):
             // Thunderstorm
-            element.src = "/svgs/thunder.svg"
+            element.src = "http://www.w3.org/1999/xlin"
             break;
         case (weatherId >= 300 && weatherId < 400):
             // Drizzle
