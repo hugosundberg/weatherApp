@@ -77,43 +77,41 @@ function getWeatherEmoji(weatherId){
     const element = document.getElementById('weatherIcon');
     element.style = "display";
 
-    weatherId = 200;
-
     switch(true){
         case (weatherId >= 200 && weatherId < 300):
             // Thunderstorm
-            element.src = "http://www.w3.org/1999/xlin"
+            element.src = "svgs/thunder.svg"
             break;
         case (weatherId >= 300 && weatherId < 400):
             // Drizzle
-            element.src = "/svgs/rainy-4.svg"
+            element.src = "svgs/rainy-4.svg"
             break;
         case (weatherId >= 500 && weatherId < 600):
             // Rain
-            element.src = "/svgs/rainy-6.svg"
+            element.src = "svgs/rainy-6.svg"
             break;
         case (weatherId >= 600 && weatherId < 700):
             // Snow
-            element.src = "/svgs/snowy-5.svg"
+            element.src = "svgs/snowy-5.svg"
             break;
         case (weatherId >= 700 && weatherId < 800):
             // Atmosphere
-            element.src = "/svgs/cloudy-day2.svg"
+            element.src = "svgs/cloudy-day-2.svg"
             break;
         case (weatherId === 800):
             // Clear sky
-            element.src = "/svgs/day.svg"
+            element.src = "svgs/day.svg"
             break;
         case (weatherId === 801):
             // Few clouds
-            element.src = "/svgs/cloudy-day-1.svg"
+            element.src = "svgs/cloudy-day-1.svg"
             break;
         case(weatherId === 802):
             // Scattered clouds
-            element.src = "/svgs/cloudy-day-3.svg"
+            element.src = "svgs/cloudy-day-3.svg"
             break;
         case(weatherId === 803 || weatherId === 804):
-            element.src = "/svgs/cloudy.svg"
+            element.src = "svgs/cloudy.svg"
             break;
         default:
             return;
