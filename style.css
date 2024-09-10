@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+
 body {
     margin: 0;
     display: flex;
@@ -35,6 +47,7 @@ body {
     display: flex;
 }
 
+
 h1 {
     font-family: 'Outfit';
     font-size: 80px;
@@ -42,6 +55,7 @@ h1 {
     color: white;
     margin-bottom: 20px;
 }
+
 
 h2 {
     font-family: 'Outfit';
@@ -122,4 +136,11 @@ footer {
     position: relative;
     bottom: 0c;
     margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4rem;
+    }
+    
 }
