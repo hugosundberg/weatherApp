@@ -8,7 +8,6 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #6ec6ff, #4ba3ff);
     height: 100vh;
-
 }
 
 .main {
@@ -49,20 +48,28 @@ h2 {
     margin: none;
 }
 
+.search-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
 .search-bar {
     display: flex;
     margin-bottom: 20px;
-    height: 50px;
-
+    width: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .search-bar input {
-    width: 340px;
     padding: 20px;
     border-radius: 50px 50px 50px 50px;
     margin-right: 10px;
     border: none;
     font-size: 20px;
+    width: 100%;
+    
 }
 
 .search-bar button {
@@ -72,6 +79,7 @@ h2 {
     border: none;
     border-radius: 50px 50px 50px 50px;
     cursor: pointer;
+    height: 100%;
 }
 
 .search-bar button:hover {
@@ -89,19 +97,17 @@ table {
     margin-top: 20px;
 }
 
+.table-colum {
+    width: 20%;
+}
+
 th {
     width: fit-content;
     text-align: center;
     font-size: 20px;
 }
 
-.date-column {
-    width: 140px;
-}
 
-.table-column {
-    width: 20%;
-}
 
 table td {
     padding: 15px;
@@ -126,35 +132,46 @@ footer {
 }
 
 /* MEDIA QUERIES*/
-
-/* Small devices */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 4rem;
-    }
-
-}
-
-/* Medium devices (964px and smaller) */
-@media (max-width: 964px) {
+@media (max-width: 1300px){
     .weatherToday {
-        display: grid;
+        width: 90%;
     }
 
+    .search-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
     h1 {
-        color: red;
+        font-size: 70px;
     }
-}
 
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 964px) {
     .weatherToday {
-        display: grid;
+        width: 60%;
     }
+
+    .search-wrapper {
+        width: 100%;
+    }
+
+    th {
+        display: none;
+    }
+
+    td {
+        display: block;
+    }
+
+
 }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+@media (max-width: 500px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .weatherToday {
+        
+    }
+}
