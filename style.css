@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
-
-
 body {
     margin: 0;
     display: flex;
@@ -33,12 +21,12 @@ body {
 }
 
 .weatherToday {
-    width: 80%;
+    width: 70%;
     text-align: center;
     background: white;
-    padding: 10px;
+    padding-bottom: 10px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -50,22 +38,22 @@ body {
 
 h1 {
     font-family: 'Outfit';
-    font-size: 80px;
+    font-size: 100px;
     text-align: center;
     color: white;
     margin-bottom: 20px;
 }
 
-
 h2 {
     font-family: 'Outfit';
+    margin: none;
 }
 
 .search-bar {
     display: flex;
-    justify-content: center;
     margin-bottom: 20px;
     height: 50px;
+
 }
 
 .search-bar input {
@@ -104,7 +92,6 @@ table {
 th {
     width: fit-content;
     text-align: center;
-    padding: 20px;
     font-size: 20px;
 }
 
@@ -117,7 +104,7 @@ th {
 }
 
 table td {
-    padding-bottom: 15px;
+    padding: 15px;
     text-align: center;
     font-size: 20px;
 }
@@ -138,9 +125,36 @@ footer {
     margin-top: 30px;
 }
 
+/* MEDIA QUERIES*/
+
+/* Small devices */
 @media (max-width: 768px) {
     h1 {
         font-size: 4rem;
     }
-    
+
 }
+
+/* Medium devices (964px and smaller) */
+@media (max-width: 964px) {
+    .weatherToday {
+        display: grid;
+    }
+
+    h1 {
+        color: red;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 964px) {
+    .weatherToday {
+        display: grid;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
